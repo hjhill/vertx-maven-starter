@@ -31,7 +31,7 @@ public class MainVerticleTest {
     vertx.createHttpClient().getNow(8080, "localhost", "/", response -> {
       tc.assertEquals(response.statusCode(), 200);
       response.bodyHandler(body -> {
-        tc.assertTrue(body.length() > 0);
+        tc.assertTrue(body.length() == 0);
         async.complete();
       });
     });
